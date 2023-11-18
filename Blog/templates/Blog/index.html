@@ -1,0 +1,15 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Homepage
+{% endblock pageName %} {% block dynamic_content %}
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-subheading">¡Bienvenido a nuestro blog!</div>
+    <div class="masthead-heading text-uppercase">Nos encanta tenerte aquí</div>
+    <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'Pages' %}"
+      >Últimos Blogs</a
+    >
+    <div style="margin-top: 60px" class="masthead-subheading">{{mensaje}}</div>
+  </div>
+</header>
+
+{% endblock dynamic_content %}

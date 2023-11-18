@@ -1,0 +1,57 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Acerca de
+mí {% endblock pageName %} {% block dynamic_content %}
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-heading text-uppercase">ACERCA DE</div>
+  </div>
+</header>
+
+<section class="page-section bg-light" id="team">
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-lg-4 mx-auto">
+        <div class="team-member">
+          <img
+            class="rounded-circle"
+            src="{% static 'Blog/assets/img/profile.jpg' %}"
+            alt="..."
+          />
+          <h4>Sebastian Lopez Lindoro</h4>
+          <p class="text-muted">Estudiante</p>
+          <a
+            class="btn btn-dark btn-social mx-2"
+            href="https://twitter.com/?lang=es"
+            aria-label="Diana Petersen Twitter Profile"
+            target="_blank"
+            
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-dark btn-social mx-2"
+            href="https://www.facebook.com/?locale=es_LA"
+            aria-label="Diana Petersen Facebook Profile"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-dark btn-social mx-2"
+            href="https://ar.linkedin.com/"
+            aria-label="Diana Petersen LinkedIn Profile"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <p class="large text-muted">
+          Blog proyecto final curso de Python en Coderhouse comision 47780 ¡Gracias por la visita!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock dynamic_content %}

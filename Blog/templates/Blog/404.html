@@ -1,0 +1,14 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Error 404
+{% endblock pageName %} {% block dynamic_content %}
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-subheading">Disculpas por las molestias</div>
+    <div class="masthead-heading text-uppercase">PÁGINA NO ENCONTRADA</div>
+    <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'Inicio' %}"
+      >Volver al inicio</a
+    >
+  </div>
+</header>
+
+{% endblock dynamic_content %}

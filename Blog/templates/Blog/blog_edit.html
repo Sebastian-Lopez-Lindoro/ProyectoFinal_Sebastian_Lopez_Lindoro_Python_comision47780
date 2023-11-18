@@ -1,0 +1,124 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Editar
+Blog {% endblock pageName %} {% block dynamic_content %}
+
+<section class="page-section" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">EDITAR BLOG</h2>
+      <h3 class="section-subheading text-muted"></h3>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <!-- ACA EMPIEZA EL FORM-->
+      <div class="row mb-5 text-center" style="justify-content: center">
+        <div class="col-md-6 text-center">
+          <p>
+            <label style="color: white" for="id_title">Titulo:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="title"
+              value="{{blog.title}}"
+              maxlength="150"
+              required
+              id="id_title"
+            />
+          </p>
+
+          <p>
+            <label style="color: white" for="id_subtitle">Subtítulo:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="subtitle"
+              value="{{blog.subtitle}}"
+              maxlength="150"
+              required
+              id="id_subtitle"
+            />
+          </p>
+
+          <p>
+            <label style="color: white" for="id_body">Cuerpo:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="body"
+              value="{{blog.body}}"
+              maxlength="150"
+              required
+              id="id_body"
+            />
+          </p>
+
+          <p>
+            <label style="color: white" for="id_author">Autor:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="author"
+              value="{{blog.author}}"
+              maxlength="150"
+              required
+              id="id_author"
+            />
+          </p>
+
+          <p>
+            <label style="color: white" for="id_date">Fecha:</label>
+            <input
+              class="form-control"
+              type="date"
+              name="date"
+              value="{{ request.user.date_joined |date:'Y M D' }}"
+              required
+              id="id_date"
+            />
+          </p>
+
+          {% if user.is_superuser %}
+
+          <p>
+            <label style="color: white" for="id_image">Image:</label>
+
+            <a
+              style="margin-bottom: 20px"
+              href="/media/blog_images/wallpaperflare.com_wallpaper_cswhnEe.jpg"
+              >blog_images/wallpaperflare.com_wallpaper_cswhnEe.jpg</a
+            >
+
+            Change:
+            <input
+              type="file"
+              name="image"
+              accept="image/*"
+              id="id_image"
+              class="text-center justify-content-center"
+              style="margin-bottom: 20px"
+            />
+          </p>
+
+          {% else %}
+
+          <p style="margin-top: 35px" class="section-heading text-uppercase">
+            Para editar las imágenes debes ser un administrador
+          </p>
+
+          {% endif %}
+
+          <!-- ACA TERMINA EL FORM-->
+
+          <input
+            style="margin-top: 20px"
+            class="btn btn-primary btn-l text-uppercase text-center justify-content-center"
+            type="submit"
+            value="Editar Blog"
+          />
+        </div>
+      </div>
+    </form>
+
+    {% endblock dynamic_content %}
+  </div>
+</section>

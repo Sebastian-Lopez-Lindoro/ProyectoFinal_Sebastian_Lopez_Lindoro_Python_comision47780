@@ -1,0 +1,68 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Crear nuevo usuario {% endblock pageName %} {% block dynamic_content %}
+
+
+<section class="page-section" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">EDITAR USUARIO</h2>
+      <h3 class="section-subheading text-muted"></h3>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}  
+      <div class="row mb-5 text-center" style="justify-content: center">
+        <div class="col-md-6 text-center">
+          <div class="form-group text-center">
+        
+      <p>
+        <label style="color: white;" for="id_username">Username:</label>
+        <input class="form-control" type="text" value="{{user.username}}" name="username" autofocus id="id_username">
+        
+        
+      </p>
+    
+      
+      <p>
+        <label style="color: white;" for="id_email">Email:</label>
+        <input class="form-control" type="email" name="email" value="{{user.email}}" maxlength="320" id="id_email">
+        
+        
+      </p>
+    
+      <p>
+        <label style="color: white;" for="id_username">Contraseña:</label>
+        <input class="form-control" type="password"  name="password1" autofocus id="id_username">
+        
+        
+      </p>
+    
+      <p>
+        <label style="color: white;" for="id_username">Repita su contraseña:</label>
+        <input class="form-control" type="password"  name="password2" autofocus id="id_username">
+        
+        
+      </p>
+    
+      
+      <p>
+        <label style="color: white;" for="id_imagen">Imagen:</label>
+        <input class="form-control" type="file" name="imagen" accept="image/*" id="id_imagen">
+        
+        
+      </div>
+    </div>
+  </div>
+      <div class="text-center">
+        <input
+          class="btn btn-primary btn-xl text-uppercase"
+          type="submit"
+          value="Editar"
+        />
+      </div>
+      
+    {% endblock dynamic_content %}
+  </div>
+</section>
+
+
+

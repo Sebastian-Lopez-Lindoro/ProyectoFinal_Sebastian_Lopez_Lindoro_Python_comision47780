@@ -1,0 +1,77 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Listado de
+blogs {% endblock pageName %} {% block dynamic_content %}
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-heading text-uppercase">Listado de blogs</div>
+  </div>
+</header>
+
+<section class="page-section" id="services">
+  <div class="container">
+    <div class="row text-center">
+      {% if not object_list %}
+
+      <h3 class="section-heading text-uppercase">
+        No se han encontrado blogs disponibles
+      </h3>
+      <br />
+      <br />
+      <br />
+
+      {% else %} {% for blog in object_list %}
+
+      <div class="col-lg-4">
+        <div class="team-member">
+          <img
+            class="mx-auto rounded-circle"
+            src="/media/{{ blog.image }}"
+            alt="..."
+          />
+
+          <h4 class="my-3">{{blog.title}}</h4>
+          <p class="text-muted">
+            {{blog.author}} <br />
+            {{blog.date}}
+          </p>
+          <a
+            class="btn btn-dark mx-2"
+            href="{% url 'Blog Detail' blog.id %}"
+            aria-label="Parveen Anand Twitter Profile"
+          >
+            Leer más</a
+          >
+          <a
+            class="btn btn-dark mx-2"
+            href="{% url 'Blog Update' blog.id %}"
+            aria-label="Parveen Anand Twitter Profile"
+          >
+            Editar</a
+          >
+          <a
+            class="btn btn-dark mx-2"
+            href="{% url 'Blog Delete' blog.id %}"
+            aria-label="Parveen Anand Twitter Profile"
+          >
+            Eliminar</a
+          >
+        </div>
+      </div>
+
+      {% endfor %} {% endif %}
+
+      <div class="team-member">
+        <a
+          class="btn btn-dark mx-2"
+          href="{% url 'Nuevo Blog' %}"
+          aria-label="Parveen Anand Twitter Profile"
+          style="margin-top: 60px"
+        >
+          CREA UN NUEVO BLOG</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock dynamic_content %}

@@ -1,0 +1,96 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Crear nuevo usuario {% endblock pageName %} {% block dynamic_content %}
+
+
+<section class="page-section" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">CREAR NUEVO USUARIO</h2>
+      <h3 class="section-subheading text-muted"></h3>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}  
+      <div class="row mb-5 text-center" style="justify-content: center">
+        <div class="col-md-6 text-center">
+          <div class="form-group text-center">
+        
+            <input
+              class="form-control"
+              id="title"
+              type="text"
+              placeholder="Nombre de usuario"
+              data-sb-validations="required"
+              name="username"
+              autocomplete="username"
+              required  
+            />
+            <div class="invalid-feedback" data-sb-feedback="name:required">
+              Ingrese un nombre de usuario válido
+            </div>
+          </div>
+          <div class="form-group text-center">
+            
+            <input
+              class="form-control"
+              id="subtitle"
+              type="email"
+              placeholder="Email"
+              data-sb-validations="required"
+              name="email"
+              autocomplete="current-password"
+              style="margin-top: 20px;"
+              required  
+            />
+            <div class="invalid-feedback" data-sb-feedback="name:required">
+              Ingrese un email válido
+            </div>
+          </div>
+          <div class="form-group text-center">
+            
+            <input
+              class="form-control"
+              id="subtitle"
+              type="password"
+              placeholder="Contraseña"
+              data-sb-validations="required"
+              name="password1"
+              autocomplete="current-password"
+              style="margin-top: 20px;"
+              required  
+            />
+            <div class="invalid-feedback" data-sb-feedback="name:required">
+              Ingrese una contraseña válida
+            </div>
+          </div>
+          <div class="form-group text-center">
+          <input
+              class="form-control"
+              id="subtitle"
+              type="password"
+              placeholder="Repetir contraseña"
+              data-sb-validations="required"
+              name="password2"
+              autocomplete="current-password"
+              style="margin-top: 20px;"
+              required            />
+            <div class="invalid-feedback" data-sb-feedback="name:required">
+              Ingrese una contraseña válida
+            </div>
+          </div>
+
+          
+        
+        </div>
+      </div>
+
+      <div class="text-center">
+        <input
+          class="btn btn-primary btn-xl text-uppercase"
+          type="submit"
+          value="Crear Usuario"
+        />
+      </div>
+      
+    {% endblock dynamic_content %}
+  </div>
+</section>

@@ -1,0 +1,13 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Iniciar
+sesión {% endblock pageName %} {% block dynamic_content %}
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-subheading">Te has deslogueado</div>
+    <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'Inicio' %}"
+      >Volver al inicio</a
+    >
+  </div>
+</header>
+
+{% endblock dynamic_content %}

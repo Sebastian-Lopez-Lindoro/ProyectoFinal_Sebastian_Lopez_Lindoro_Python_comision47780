@@ -1,0 +1,33 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Tu Perfil {% endblock pageName %} {% block dynamic_content %}
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-heading text-uppercase">TU PERFIL</div>
+  </div>
+</header>
+
+<section class="page-section bg-light" id="team">
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-lg-4 mx-auto">
+        <div class="team-member">
+          <img
+            class="mx-auto rounded-circle"
+            src="{{user.avatar}}"
+          />
+          <h4>{{user.username}}</h4>
+          <p class="text-muted">{{user.email}}</p>
+      
+        </div>
+      </div>
+   
+      <div class="container text-center justify-content-center">
+        
+        <a class="btn btn-primary btn-l text-uppercase " href="{% url 'Users:Edit' %}"
+          >Editar Perfil</a
+        >
+      </div>
+  </div>
+</section>
+{% endblock dynamic_content %}
