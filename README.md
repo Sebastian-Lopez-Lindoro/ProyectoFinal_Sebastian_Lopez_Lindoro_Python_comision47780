@@ -11,3 +11,7 @@ El modelo Blog incluye un título, subtítulo, cuerpo, autor, fecha e imagen. El
 ## Interactividad
 
 El usuario puede crear, editar y elminar blogs (si está autenticado), además de cambiar datos de su perfil o subir un avatar.
+
+## LINK de VIDEO demostrativo del sito
+
+https://www.awesomescreenshot.com/video/22570514?key=baa60af5deabe1edd806e768d8285242
