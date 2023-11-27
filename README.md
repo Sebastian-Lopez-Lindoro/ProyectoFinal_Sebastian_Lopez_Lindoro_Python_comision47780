@@ -15,3 +15,6 @@ El usuario puede crear, editar y elminar blogs (si está autenticado), además d
 ## LINK de VIDEO demostrativo del sito
 
 https://www.awesomescreenshot.com/video/22570514?key=baa60af5deabe1edd806e768d8285242
+
+*usuario administrador: sebastian
+*password administrador: coderhouse26
